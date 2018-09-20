@@ -135,9 +135,21 @@ footer {
     .grid-2 {
         grid-template-columns: 1fr;
     }
-
-    .services div {
+    
+    /* put border on all divs EXCEPT the last one */
+    .services div:not(:last-child) {
         border-bottom: 1px dashed #333;
         padding: 1.2rem 1rem;
+    }
+}
+
+/* === Landscape === */
+@media (max-height: 500px) {
+    .content .title,
+    .content .text {
+        display: none;
+    }
+    div.content {
+        top: 0;
     }
 }

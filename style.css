@@ -1,0 +1,143 @@
+body {
+    background: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* after inserts style without being in the DOM */
+header.showcase::after {
+    /* blank text */
+    content: '';
+    /* vh = viewport height, 100 = all the browser windows regardless of screen size */
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/showcase.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* we have to display block in order to show the background img */
+    display: block;
+    /* filter to blur */
+    filter: blur(10px);
+    /* for compatibility */
+    -webkit-filter: blur(10px);
+    transition: all 1000ms; /* 1s */
+}
+    header.showcase:hover::after {
+        filter: blur(0px);
+        -webkit-filter: blur(0px);
+    }
+
+    /* to blur the content on hover */
+    header.showcase:hover .content {
+        /* filter: blur(1px);
+        -webkit-filter: blur(1px); */
+        text-shadow: 3px 3px 20px black;
+    }
+
+div.content {
+    position: absolute;
+    /* z-index = the higher it is the close to you */
+    z-index: 1;
+    /* positioning it */
+    top: 10%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+}
+
+    .content .logo {
+        height: 180px;
+        width: 180px;
+    }
+    .content .title {
+        font-size: 2.2rem;
+        /* move title a bit down from logo */
+        margin-top: 1rem;
+    }
+    .content .text {
+        /* space out the text line height */
+        line-height: 1.7;
+        margin-top: 1rem;
+    }
+
+/* main content */
+div.container {
+    max-width: 960px;
+    margin: auto;
+    /* no scrollbars */
+    overflow: hidden;
+    /* padding: top-bottom left-right */
+    padding: 4rem 1rem;
+}
+    /* services */
+    .grid-3 {
+        display: grid;
+        /* create a gap between the grid */
+        grid-gap: 20px;
+        /* define grid with 3 fractionals of 1, fr = evenly spaced*/
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* define grid 3 times 1 fractional evenly spaced */
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* about */
+    .grid-2 {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+.bg-light {
+    background: #f4f4f4;
+    color: #333;
+}
+.bg-dark {
+    background: #333;
+    color: #f4f4f4;
+}
+
+footer {
+    padding: 2.2rem;
+}
+    footer p {
+        margin: 0;
+    }
+
+/* ===== Small Screens ===== */
+@media (max-width: 560px) {
+    header.showcase::after {
+        height: 50vh;
+    }
+    div.content {
+        top: 5%;
+        margin-top: 5px;
+    }
+    div.content img.logo {
+        height: 140px;
+        width: 140px;
+    }
+    /* hide text on small displays */
+    div.content .text {
+        display: none;
+    }
+
+    /* stack section both grids */
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .services div {
+        border-bottom: 1px dashed #333;
+        padding: 1.2rem 1rem;
+    }
+}

@@ -5,6 +5,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+img.logo {
+    /* shadow on png non-box*/
+    -webkit-filter: drop-shadow(3px 3px 10px #222 );
+    filter: drop-shadow(3px 3px 10px #222);
+}
+
 a:link {
     text-decoration: none;
     /* color: #fff; */
@@ -46,14 +52,12 @@ header.showcase::after {
     }
 
     /* to blur the content on hover */
-    header.showcase:hover, div.content, img.logo, button{
+    header.showcase:hover, div.content {
         /* filter: blur(1px);
         -webkit-filter: blur(1px); */
         text-shadow: 3px 3px 20px black;
     }
-        header.showcase:hover .logo {
-            text-shadow: 32px 3px 20px black;
-        }
+
     button {
         margin-top: 20px;
         padding: 1rem;
@@ -90,7 +94,7 @@ div.content {
         /* extra */
         border-radius: 100px;
         /* border: 2px solid white; */
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.1);
     }
     .content .title {
         font-size: 2.2rem;

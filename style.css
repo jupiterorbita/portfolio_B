@@ -53,7 +53,6 @@ header.showcase::after {
     }
         header.showcase:hover .logo {
             text-shadow: 32px 3px 20px black;
-
         }
     button {
         margin-top: 20px;

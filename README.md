@@ -7,6 +7,9 @@
 
 #### a simple landing page portfolio with blur on defocus
 
+####project available at: <br>
+###<https://jupiterorbita.github.io/portfolio_B/>
+
 
 ```
 made with: HTML5, CSS3, FontAwesome - no CSS frameworks used
